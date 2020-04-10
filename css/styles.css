@@ -1,0 +1,107 @@
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+ }
+
+body {
+        font-size: 1.5em; 
+        line-height: 1.6;
+        font-weight: 400;
+        font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #222; 
+        margin: 0;
+        background-image: linear-gradient(to right, #31b189 0%, #ffc872 100%);
+        font-family: 'Staatliches', cursive;
+}  
+
+h1 {
+    font-family: 'Staatliches', cursive;
+    font-size: 6rem;
+    padding: 3rem 0;
+    margin: 0.67em 0;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+p {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+form {
+    margin-bottom: 2.5rem; 
+    background-color: #D1D1D1;
+    margin: 20px 20px;
+    padding: 10px 10px;
+    border-radius: 15px;
+}
+
+.u-full-width {
+        width: 100%;
+        box-sizing: border-box; }    
+
+select {
+  color: inherit; 
+  font: inherit; 
+  margin: 0;
+  text-transform: none;
+  height: 38px;
+  width: 20px;
+  padding: 6px 20px; 
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  margin-bottom: 1.5rem; 
+  display: inline-block;
+}
+
+select:focus {
+    border: 1px solid #33C3F0;
+    outline: 0; }
+
+    label {
+      display: block;
+      margin-bottom: .5rem;
+      font-weight: 600;
+       display: block;
+     margin-bottom: .5rem;
+     font-weight: 600; 
+     }    
+
+label > .label-bodyy {
+        display: inline-block;
+        margin-left: .5rem;
+        font-weight: normal; }   
+
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+
+  .row:after {
+      content: "";
+    display: table;
+    clear: both;
+ }
+
+  @media (min-width: 550px) {
+    .columns:first-child {
+        margin-left: 0; }
+    
+   .three.columns { width: 22%;}
+   .four.columns { width: 30.6666666667%; }     
+    
+   h1 { font-size: 5.0rem; }
+
+  }
+  
+      
