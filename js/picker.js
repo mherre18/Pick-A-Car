@@ -169,6 +169,22 @@ year.addEventListener('input', e => {
    filterCar();
 });
 
+const minim = document.querySelector('#min');
+minim.addEventListener('input', e => {
+   // console.log(e.target.value);
+   dataSearch.minim = Number(e.target.value);
+
+   filterCar();
+});
+
+const maxim = document.querySelector('#max');
+maxim.addEventListener('input', e => {
+   // console.log(e.target.value);
+   dataSearch.maxim = Number(e.target.value);
+
+   filterCar();
+});
+
 function showCars(cars){
 
     const container = document.querySelector('#result');
@@ -187,7 +203,7 @@ function showCars(cars){
 }
 
 function filterCar() {
-    const result = getCars().filter(filterBrand).filter(filterYear);
+    const result = getCars().filter(filterBrand).filter(filterYear).filter(filterMin).filter(filterMax);
     console.log(result);
 
     if(result.length){
@@ -208,6 +224,22 @@ function filterBrand(car) {
 function filterYear(car) {
     if(dataSearch.year) {
         return car.year === dataSearch.year;
+    } else {
+        return car;
+    }
+}
+
+function filterMin(car) {
+    if(dataSearch.minim) {
+        return car.price >= dataSearch.minim;
+    } else {
+        return car;
+    }
+}
+
+function filterMax(car) {
+    if(dataSearch.maxim) {
+        return car.price <= dataSearch.maxim;
     } else {
         return car;
     }
