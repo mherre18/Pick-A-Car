@@ -161,26 +161,54 @@ brand.addEventListener('input', e => {
    filterCar();
 });
 
+const year = document.querySelector('#year');
+year.addEventListener('input', e => {
+   // console.log(e.target.value);
+   dataSearch.year = Number(e.target.value);
+
+   filterCar();
+});
+
 function showCars(cars){
 
-    const conainer = document.querySelector('#result');
+    const container = document.querySelector('#result');
+
+    while(container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
+    
     cars.forEach(car => {
         const carHTML = document.createElement('p');
         carHTML.innerHTML = `<p> ${car.brand} ${car.model} -  ${car.year} - ${car.doors} Puertas - Transmision: ${car.transmision} - Price: ${car.price} - Color: ${car.color} </p>`;
 
-        conainer.appendChild(carHTML);
+        container.appendChild(carHTML);
     });
 }
 
 function filterCar() {
-    const result = getCars().filter(filtrerBrand);
+    const result = getCars().filter(filterBrand).filter(filterYear);
     console.log(result);
+
+    if(result.length){
+        showCars(result);
+    } else {
+        alert('no results');
+    }
 }
 
-function filtrerBrand(car) {
+function filterBrand(car) {
     if(dataSearch.brand) {
         return car.brand === dataSearch.brand;
     } else {
+        return car;
+    }
+}
 
+function filterYear(car) {
+    if(dataSearch.year) {
+        return car.year === dataSearch.year;
+    } else {
+        return car;
     }
 }
