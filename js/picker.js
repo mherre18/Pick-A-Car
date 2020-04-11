@@ -185,6 +185,30 @@ maxim.addEventListener('input', e => {
    filterCar();
 });
 
+const doors = document.querySelector('#doors');
+doors.addEventListener('input', e => {
+   // console.log(e.target.value);
+   dataSearch.doors = Number(e.target.value);
+
+   filterCar();
+});
+
+const transmision = document.querySelector('#transmision');
+transmision.addEventListener('input', e => {
+   // console.log(e.target.value);
+   dataSearch.transmision = e.target.value;
+
+   filterCar();
+});
+
+const color = document.querySelector('#color');
+color.addEventListener('input', e => {
+   // console.log(e.target.value);
+   dataSearch.color = e.target.value;
+
+   filterCar();
+});
+
 function showCars(cars){
 
     const container = document.querySelector('#result');
@@ -203,7 +227,7 @@ function showCars(cars){
 }
 
 function filterCar() {
-    const result = getCars().filter(filterBrand).filter(filterYear).filter(filterMin).filter(filterMax);
+    const result = getCars().filter(filterBrand).filter(filterYear).filter(filterMin).filter(filterMax).filter(filterDoors).filter(filterTrans).filter(filterColor);
     console.log(result);
 
     if(result.length){
@@ -240,6 +264,30 @@ function filterMin(car) {
 function filterMax(car) {
     if(dataSearch.maxim) {
         return car.price <= dataSearch.maxim;
+    } else {
+        return car;
+    }
+}
+
+function filterDoors(car) {
+    if(dataSearch.doors) {
+        return car.doors === dataSearch.doors;
+    } else {
+        return car;
+    }
+}
+
+function filterTrans(car) {
+    if(dataSearch.transmision) {
+        return car.transmision === dataSearch.transmision;
+    } else {
+        return car;
+    }
+}
+
+function filterColor(car) {
+    if(dataSearch.color) {
+        return car.color === dataSearch.color;
     } else {
         return car;
     }
