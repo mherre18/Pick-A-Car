@@ -155,7 +155,10 @@ let dataSearch = {
 
 const brand = document.querySelector('#brand');
 brand.addEventListener('input', e => {
-    console.log(e.target.value);
+   // console.log(e.target.value);
+   dataSearch.brand = e.target.value;
+
+   filterCar();
 });
 
 function showCars(cars){
@@ -169,3 +172,15 @@ function showCars(cars){
     });
 }
 
+function filterCar() {
+    const result = getCars().filter(filtrerBrand);
+    console.log(result);
+}
+
+function filtrerBrand(car) {
+    if(dataSearch.brand) {
+        return car.brand === dataSearch.brand;
+    } else {
+
+    }
+}
