@@ -103,5 +103,23 @@ label > .label-bodyy {
    h1 { font-size: 5.0rem; }
 
   }
+
+  .alert {
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    font-size: 2rem;
+}
+
+.error {
+  background-color: #ffe3b3;
+  /*width: 250px;*/
+  border-radius: 15px;
+  align-content: center;
+ display: inline-block;
+  
+}
   
       

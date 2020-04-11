@@ -220,18 +220,13 @@ function clearHTML() {
 
 }
 
-function noResult(){
-    clearHTML();
 
-    const noResult = document.createElement('div');
-    noResult.classList.add('alert', 'eror');
-    noResult.appendChild(document.createTextNode('There is not such Car'))
-
-}
 
 function showCars(cars){
 
     clearHTML();
+
+    const container = document.querySelector('#result');
   
     cars.forEach(car => {
         const carHTML = document.createElement('p');
@@ -239,6 +234,16 @@ function showCars(cars){
 
         container.appendChild(carHTML);
     });
+}
+
+function noResult(){
+    clearHTML();
+
+    const noResult = document.createElement('div');
+    noResult.classList.add('alert', 'error');
+    noResult.appendChild(document.createTextNode('There is not such Car'));
+    document.querySelector('#result').appendChild(noResult);
+
 }
 
 function filterCar() {
@@ -308,3 +313,4 @@ function filterColor(car) {
         return car;
     }
 }
+
