@@ -209,15 +209,30 @@ color.addEventListener('input', e => {
    filterCar();
 });
 
-function showCars(cars){
 
+function clearHTML() {
     const container = document.querySelector('#result');
+
 
     while(container.firstChild) {
         container.removeChild(container.firstChild);
     }
 
-    
+}
+
+function noResult(){
+    clearHTML();
+
+    const noResult = document.createElement('div');
+    noResult.classList.add('alert', 'eror');
+    noResult.appendChild(document.createTextNode('There is not such Car'))
+
+}
+
+function showCars(cars){
+
+    clearHTML();
+  
     cars.forEach(car => {
         const carHTML = document.createElement('p');
         carHTML.innerHTML = `<p> ${car.brand} ${car.model} -  ${car.year} - ${car.doors} Puertas - Transmision: ${car.transmision} - Price: ${car.price} - Color: ${car.color} </p>`;
@@ -233,9 +248,10 @@ function filterCar() {
     if(result.length){
         showCars(result);
     } else {
-        alert('no results');
+        noResult();
     }
 }
+
 
 function filterBrand(car) {
     if(dataSearch.brand) {
