@@ -143,6 +143,21 @@ document.addEventListener('DOMContentLoaded', () => {
     showCars(cars);
 });
 
+let dataSearch = {
+    brand: '',
+    year: '',
+    min: '',
+    max: '',
+    doors: '',
+    transmision: '',
+    color: ''
+}
+
+const brand = document.querySelector('#brand');
+brand.addEventListener('input', e => {
+    console.log(e.target.value);
+});
+
 function showCars(cars){
 
     const conainer = document.querySelector('#result');
@@ -153,3 +168,4 @@ function showCars(cars){
         conainer.appendChild(carHTML);
     });
 }
+
